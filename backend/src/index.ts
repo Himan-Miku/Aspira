@@ -10,10 +10,10 @@ process.on("uncaughtException", (err) => {
   console.warn("shutting down server");
   process.exit(1);
 });
-connectDB();
+// run();
 
 app.listen(process.env.PORT || 8000, () => {
-  console.log("Server is running on port " + process.env.PORT);
+  console.log("Server is running on port " + process.env.PORT || 8000);
 });
 
 //unhandeled rejection handling
