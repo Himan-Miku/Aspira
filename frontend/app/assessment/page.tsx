@@ -4,6 +4,7 @@ import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
+import Axios from "axios";
 
 const animatedComponents = makeAnimated();
 
@@ -423,17 +424,19 @@ export default function Assess() {
       </Tabs>
       <button
         onClick={async () => {
-          const res = await fetch("http://localhost:4000/api/getCareerCards", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
+          const res = await Axios.post(
+            "http://localhost:4000/api/getCareerCards",
+            {
+              payload: JSON.stringify(selectedOptions),
             },
-            body: JSON.stringify(selectedOptions),
-          });
-          const data = await res.json();
+            { withCredentials: true }
+          );
+          const data = await res?.data;
           console.log(data);
         }}
-      ></button>
+      >
+        Send
+      </button>
     </div>
   );
 }
