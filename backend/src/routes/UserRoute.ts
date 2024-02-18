@@ -6,6 +6,6 @@ let router = Router();
 
 router.route("/login").post(Login);
 router.route("/signup").post(SignUp);
-router.route("/getgay").get(Runner);
+router.route("/getCareerCards").get(Runner);
 
 export default router;
