@@ -3,6 +3,7 @@ import { Poppins, Lexend_Deca } from "next/font/google";
 import "./globals.css";
 import { AuthContextProvider } from "@/context/AuthContext";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/footer";
 
 const inter = Lexend_Deca({ weight: "300", subsets: ["latin"] });
 
