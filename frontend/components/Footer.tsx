@@ -4,11 +4,11 @@ import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-[#FEF4EA] h-80 px-10 gap-5">
-      <div className="flex justify-start mx-5 mt-20">
+    <div className="w-full flex flex-col bg-[#FEF4EA] h-80 px-80 gap-5">
+      <div className="flex  mx-5 mt-10">
         <Image src="/Aspira.svg" alt="logo" width={100} height={100} />
       </div>
-      <div>
+      <div className="mt-2 p-2">
         <h2 className="text-blue-600 font-bold text-2xl">
           Want to know industry news everyday ?
         </h2>
@@ -16,8 +16,11 @@ const Footer = () => {
       <div className="">
         <h4 className="text-blue-600 texl-sm  ">Subscibe to our mail</h4>
         <div className="flex">
-          
-          <input type="text" placeholder="Enter your email" className="w-full"/>
+          <input
+            type="text"
+            placeholder="Enter your email"
+            className="w-[400px]"
+          />
           <Button className="bg-orange-600 ">Subscribe</Button>
         </div>
       </div>
