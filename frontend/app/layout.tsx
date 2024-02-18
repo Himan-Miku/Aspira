@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins, Lexend_Deca } from "next/font/google";
 import "./globals.css";
 import { AuthContextProvider } from "@/context/AuthContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Lexend_Deca({ weight: "300", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,10 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} dark`}>
-        <Navbar></Navbar>
-        <AuthContextProvider>{children}</AuthContextProvider>
-        <Footer/>
+      <body className={inter.className}>
+        <AuthContextProvider>
+          <Navbar></Navbar>
+          {children}
+        </AuthContextProvider>
       </body>
     </html>
   );
